@@ -14,6 +14,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-MergeVideo-MergeVideoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MergeVideo-MergeVideoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */; };
+		8B02477628A1734F009C74A0 /* audio.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477528A1734E009C74A0 /* audio.flac */; };
+		8B02477828A17356009C74A0 /* vid1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477728A17356009C74A0 /* vid1.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-MergeVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MergeVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MergeVideo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-MergeVideo-MergeVideoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MergeVideo-MergeVideoTests.release.xcconfig"; path = "Target Support Files/Pods-MergeVideo-MergeVideoTests/Pods-MergeVideo-MergeVideoTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTMergeVideo.m; sourceTree = "<group>"; };
+		8B02477528A1734E009C74A0 /* audio.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.flac; sourceTree = "<group>"; };
+		8B02477728A17356009C74A0 /* vid1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = vid1.mov; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -92,6 +98,9 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				8B02477528A1734E009C74A0 /* audio.flac */,
+				8B02477728A17356009C74A0 /* vid1.mov */,
+				8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */,
 			);
 			name = MergeVideo;
 			sourceTree = "<group>";
@@ -242,8 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02477828A17356009C74A0 /* vid1.mov in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8B02477628A1734F009C74A0 /* audio.flac in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
