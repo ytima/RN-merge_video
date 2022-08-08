@@ -17,6 +17,7 @@
 		8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */; };
 		8B02477628A1734F009C74A0 /* audio.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477528A1734E009C74A0 /* audio.flac */; };
 		8B02477828A17356009C74A0 /* vid1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477728A17356009C74A0 /* vid1.mov */; };
+		96FAFB6C28A19B9E001A76DC /* MergeVideoLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-MergeVideo.a in Frameworks */,
+				96FAFB6C28A19B9E001A76DC /* MergeVideoLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +201,9 @@
 			dependencies = (
 			);
 			name = MergeVideo;
+			packageProductDependencies = (
+				96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */,
+			);
 			productName = MergeVideo;
 			productReference = 13B07F961A680F5B00A75B9A /* MergeVideo.app */;
 			productType = "com.apple.product-type.application";
@@ -229,6 +234,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -709,6 +717,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RomanCarbon/MergeVideoLibrary";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */;
+			productName = MergeVideoLibrary;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

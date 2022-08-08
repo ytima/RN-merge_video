@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mergevideolibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RomanCarbon/MergeVideoLibrary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8664ef01b3b5b2eb72c78ef7901b652be2205e96"
+      }
+    }
+  ],
+  "version" : 2
+}
