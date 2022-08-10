@@ -17,7 +17,8 @@
 		8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */; };
 		8B02477628A1734F009C74A0 /* audio.flac in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477528A1734E009C74A0 /* audio.flac */; };
 		8B02477828A17356009C74A0 /* vid1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477728A17356009C74A0 /* vid1.mov */; };
-		96FAFB6C28A19B9E001A76DC /* MergeVideoLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */; };
+		962DC4E428A2725600974125 /* MergeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DC4E328A2725600974125 /* MergeVideo.swift */; };
+		962DC4E628A2758000974125 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962DC4E528A2758000974125 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,9 @@
 		8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTMergeVideo.m; sourceTree = "<group>"; };
 		8B02477528A1734E009C74A0 /* audio.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.flac; sourceTree = "<group>"; };
 		8B02477728A17356009C74A0 /* vid1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = vid1.mov; sourceTree = "<group>"; };
+		962DC4E228A2725500974125 /* MergeVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MergeVideo-Bridging-Header.h"; sourceTree = "<group>"; };
+		962DC4E328A2725600974125 /* MergeVideo.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MergeVideo.swift; sourceTree = "<group>"; tabWidth = 4; };
+		962DC4E528A2758000974125 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -67,7 +71,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-MergeVideo.a in Frameworks */,
-				96FAFB6C28A19B9E001A76DC /* MergeVideoLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,8 @@
 				8B02477528A1734E009C74A0 /* audio.flac */,
 				8B02477728A17356009C74A0 /* vid1.mov */,
 				8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */,
+				962DC4E328A2725600974125 /* MergeVideo.swift */,
+				962DC4E228A2725500974125 /* MergeVideo-Bridging-Header.h */,
 			);
 			name = MergeVideo;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				962DC4E528A2758000974125 /* Media.xcassets */,
 				13B07FAE1A68108700A75B9A /* MergeVideo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MergeVideoTests */,
@@ -202,7 +208,6 @@
 			);
 			name = MergeVideo;
 			packageProductDependencies = (
-				96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */,
 			);
 			productName = MergeVideo;
 			productReference = 13B07F961A680F5B00A75B9A /* MergeVideo.app */;
@@ -221,7 +226,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -235,7 +240,6 @@
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			packageReferences = (
-				96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */,
 			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
@@ -259,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				962DC4E628A2758000974125 /* Media.xcassets in Resources */,
 				8B02477828A17356009C74A0 /* vid1.mov in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -433,6 +438,7 @@
 			files = (
 				8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				962DC4E428A2725600974125 /* MergeVideo.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-MergeVideo-MergeVideoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -479,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-MergeVideo-MergeVideoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MergeVideoTests/Info.plist;
@@ -506,6 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SX289QSDFJ;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MergeVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -517,8 +526,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CarbonStudio.MergeVideo;
 				PRODUCT_NAME = MergeVideo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MergeVideo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -532,6 +542,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SX289QSDFJ;
 				INFOPLIST_FILE = MergeVideo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,8 +553,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CarbonStudio.MergeVideo;
 				PRODUCT_NAME = MergeVideo;
+				SWIFT_OBJC_BRIDGING_HEADER = "MergeVideo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -717,25 +729,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RomanCarbon/MergeVideoLibrary";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		96FAFB6B28A19B9E001A76DC /* MergeVideoLibrary */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 96FAFB6A28A19B9E001A76DC /* XCRemoteSwiftPackageReference "MergeVideoLibrary" */;
-			productName = MergeVideoLibrary;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

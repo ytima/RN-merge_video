@@ -9,18 +9,24 @@ import ReactNative, {
   View,
 } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
-const {MergeVideoLibrary} = ReactNative.NativeModules;
+const {MergeVideo} = ReactNative.NativeModules;
 
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const handlePress = async () => {
-    const audioPath = RNFetchBlob.fs.dirs.MainBundleDir + 'audio.flac'
-    const videoPath = RNFetchBlob.fs.dirs.MainBundleDir + 'vid1.mov'
+    const audioPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/audio.flac'
+    const videoPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/vid1.mov'
+    console.log('audioPath exist', await RNFetchBlob.fs.exists(audioPath))
+    console.log('videoPath exist', await  RNFetchBlob.fs.exists(videoPath))
     // const res = await RNFetchBlob.fs.ls(audioPath)
     // console.log('res', res)
-    const result = MergeVideoLibrary.mergeVideo(audioPath, videoPath)
-    console.log('result', result)
+    // const cb = (response) => { console.log('response', response)}
+    const cb = (response) => { alert(response)}
+    const result = MergeVideo.mergeVideo(videoPath, audioPath, cb, (error) => { 
+      alert(error);
+    })
+    // console.log('result', result)
   }
   return (
     <SafeAreaView style={{flex: 1}}>
