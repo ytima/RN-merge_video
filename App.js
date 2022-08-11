@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactNative, {
   SafeAreaView,
   StatusBar,
@@ -9,32 +9,43 @@ import ReactNative, {
   View,
 } from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
-const {MergeVideo} = ReactNative.NativeModules;
+const { MergeVideo } = ReactNative.NativeModules;
+import Video from 'react-native-video';
 
 
 const App = () => {
+  const [url, setUrl] = useState(null)
   const isDarkMode = useColorScheme() === 'dark';
   const handlePress = async () => {
     const audioPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/audio.flac'
     const videoPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/vid1.mov'
     console.log('audioPath exist', await RNFetchBlob.fs.exists(audioPath))
-    console.log('videoPath exist', await  RNFetchBlob.fs.exists(videoPath))
+    console.log('videoPath exist', await RNFetchBlob.fs.exists(videoPath))
     // const res = await RNFetchBlob.fs.ls(audioPath)
     // console.log('res', res)
     // const cb = (response) => { console.log('response', response)}
-    const cb = (response) => { alert(response)}
-    const result = MergeVideo.mergeVideo(videoPath, audioPath, cb, (error) => { 
+    const cb = (response) => {
+      // alert(response);
+      setUrl(response)
+    }
+    MergeVideo.mergeVideo(videoPath, audioPath, cb, (error) => {
       alert(error);
     })
     // console.log('result', result)
   }
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={{ flex: 1, backgroundColor: 'biege', paddingHorizontal: 20, paddingVertical: 10 }}>
         <TouchableOpacity style={{ backgroundColor: '#999', paddingHorizontal: 10, paddingVertical: 20, borderRadius: 30, alignItems: 'center' }} onPress={handlePress}>
           <Text>Merge video & audio</Text>
         </TouchableOpacity>
+        {url && (
+          <Video
+            style={{ width: '100%', height: 500 }}
+            source={{ uri: url }}
+          />
+        )}
       </View>
     </SafeAreaView>
   );
