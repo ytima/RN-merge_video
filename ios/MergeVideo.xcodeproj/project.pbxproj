@@ -19,6 +19,8 @@
 		8B02477828A17356009C74A0 /* vid1.mov in Resources */ = {isa = PBXBuildFile; fileRef = 8B02477728A17356009C74A0 /* vid1.mov */; };
 		962DC4E428A2725600974125 /* MergeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DC4E328A2725600974125 /* MergeVideo.swift */; };
 		962DC4E628A2758000974125 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962DC4E528A2758000974125 /* Media.xcassets */; };
+		96427D1628AA67FD00C95A77 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96427D1528AA67FD00C95A77 /* VideoHelper.swift */; };
+		96427D1828AA944500C95A77 /* IMG_1033.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 96427D1728AA944500C95A77 /* IMG_1033.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		962DC4E228A2725500974125 /* MergeVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MergeVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		962DC4E328A2725600974125 /* MergeVideo.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MergeVideo.swift; sourceTree = "<group>"; tabWidth = 4; };
 		962DC4E528A2758000974125 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		96427D1528AA67FD00C95A77 /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
+		96427D1728AA944500C95A77 /* IMG_1033.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_1033.MOV; path = ../../../../../../Downloads/IMG_1033.MOV; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -104,9 +108,11 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				8B02477528A1734E009C74A0 /* audio.flac */,
+				96427D1728AA944500C95A77 /* IMG_1033.MOV */,
 				8B02477728A17356009C74A0 /* vid1.mov */,
 				8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */,
 				962DC4E328A2725600974125 /* MergeVideo.swift */,
+				96427D1528AA67FD00C95A77 /* VideoHelper.swift */,
 				962DC4E228A2725500974125 /* MergeVideo-Bridging-Header.h */,
 			);
 			name = MergeVideo;
@@ -268,6 +274,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				8B02477628A1734F009C74A0 /* audio.flac in Resources */,
+				96427D1828AA944500C95A77 /* IMG_1033.MOV in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +446,7 @@
 				8B02476F28A16E29009C74A0 /* RCTMergeVideo.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				962DC4E428A2725600974125 /* MergeVideo.swift in Sources */,
+				96427D1628AA67FD00C95A77 /* VideoHelper.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

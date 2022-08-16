@@ -16,7 +16,7 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
   const handlePress = async () => {
     const audioPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/audio.flac'
-    const videoPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/vid1.mov'
+    const videoPath = 'file://' + RNFetchBlob.fs.dirs.MainBundleDir + '/IMG_1033.MOV'
     console.log('audioPath exist', await RNFetchBlob.fs.exists(audioPath))
     console.log('videoPath exist', await  RNFetchBlob.fs.exists(videoPath))
     // const res = await RNFetchBlob.fs.ls(audioPath)

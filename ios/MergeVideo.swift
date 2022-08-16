@@ -47,15 +47,22 @@ public class MergeVideo: NSObject {
     }
 
     @objc func mergeVideo(_ firstVideoURL: String?, audioURL: String?, successCallback: @escaping RCTResponseSenderBlock, errorCallback: @escaping RCTResponseSenderBlock) {
-        guard let firstVideoURL = NSURL(string: firstVideoURL ?? "")?.absoluteURL, let secondVideoUrl = secondVideoURL, let audioURL = NSURL(string: audioURL ?? "")?.absoluteURL else {
+        print("START: ", Date())
+        guard let secondVideoUrl = secondVideoURL, let audioURL = NSURL(string: audioURL ?? "")?.absoluteURL else {
             errorCallback(["Error in URLs"])
             return
         }
-        let firstAsset = AVAsset(url: firstVideoURL)
+        var firstAsset: AVAsset?
         let secondAsset = AVAsset(url: secondVideoUrl)
         let audioAsset = AVAsset(url: audioURL)
         let finalDuration = audioAsset.duration
-        isSecondVideoNeeded = firstAsset.duration < finalDuration
+        if firstVideoURL != nil, let firstVideoURL = NSURL(string: firstVideoURL ?? "")?.absoluteURL {
+            firstAsset = AVAsset(url: firstVideoURL)
+            guard let firstAsset = firstAsset else { return }
+            isSecondVideoNeeded = firstAsset.duration < finalDuration
+        } else {
+            isSecondVideoNeeded = true
+        }
 
         let mixComposition = AVMutableComposition()
 
@@ -71,20 +78,30 @@ public class MergeVideo: NSObject {
             return }
 
         do {
-            let duration = firstAsset.duration < finalDuration ? firstAsset.duration : finalDuration
-            try firstTrack.insertTimeRange(
-                CMTimeRangeMake(start: .zero, duration: duration),
-                of: firstAsset.tracks(withMediaType: .video)[0],
-                at: .zero)
-            let firstInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: firstTrack)
-            firstInstruction.setOpacity(0.0, at: duration)
-            instructions.append(firstInstruction)
+            if let firstAsset = firstAsset {
+                let duration = isSecondVideoNeeded ? firstAsset.duration : finalDuration
+                try firstTrack.insertTimeRange(
+                    CMTimeRangeMake(start: .zero, duration: duration),
+                    of: firstAsset.tracks(withMediaType: .video)[0],
+                    at: .zero)
+                let firstInstruction = VideoHelper.videoCompositionInstruction(firstTrack, asset: firstAsset)
+                firstInstruction.setOpacity(0.0, at: duration)
+                instructions.append(firstInstruction)
+            }
+
             if isSecondVideoNeeded, let secondTrack = secondTrack {
                 try secondTrack.insertTimeRange(
-                    CMTimeRangeMake(start: .zero, duration: finalDuration - firstAsset.duration),
+                    CMTimeRangeMake(start: .zero, duration: finalDuration - (firstAsset?.duration ?? .zero)),
                     of: secondAsset.tracks(withMediaType: .video)[0],
-                    at: firstAsset.duration)
+                    at: firstAsset?.duration ?? .zero)
                 let secondInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: secondTrack)
+                let scaleToFitRatio = UIScreen.main.bounds.width / secondTrack.naturalSize.width
+                let scaleFactor = CGAffineTransform(
+                    scaleX: scaleToFitRatio,
+                    y: scaleToFitRatio)
+                secondInstruction.setTransform(
+                    secondTrack.preferredTransform.concatenating(scaleFactor),
+                    at: .zero)
                 instructions.append(secondInstruction)
             }
         } catch {
@@ -101,10 +118,10 @@ public class MergeVideo: NSObject {
         mainInstruction.layerInstructions = instructions
         let mainComposition = AVMutableVideoComposition()
         mainComposition.instructions = [mainInstruction]
-        mainComposition.frameDuration = CMTimeMake(value: 1, timescale: 30)
+        mainComposition.frameDuration = CMTimeMake(value: 1, timescale: 25)
         mainComposition.renderSize = CGSize(
-            width: firstAsset.tracks(withMediaType: .video)[0].naturalSize.width,
-            height: firstAsset.tracks(withMediaType: .video)[0].naturalSize.height)
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height)
 
         let audioTrack = mixComposition.addMutableTrack(
             withMediaType: .audio,
@@ -154,7 +171,7 @@ public class MergeVideo: NSObject {
                             return
                         }
                         successCallback([String(describing: finalUrl)])
-                        print("Exelent! \(Date())")
+                        print("FINISH: \(Date())")
                     }
                     self?.removeUrlFromFileManager(exporterOutputURL)
                 }
@@ -210,7 +227,7 @@ public class MergeVideo: NSObject {
 
             let audioReaderSettings: [String : Any] = [
                 AVFormatIDKey: kAudioFormatLinearPCM,
-                AVSampleRateKey: 44100,
+                AVSampleRateKey: 32000,
                 AVNumberOfChannelsKey: 2
             ]
 
@@ -241,7 +258,7 @@ public class MergeVideo: NSObject {
 
         let audioSettings: [String:Any] = [AVFormatIDKey : kAudioFormatMPEG4AAC,
                                            AVNumberOfChannelsKey : 2,
-                                           AVSampleRateKey : 44100.0,
+                                           AVSampleRateKey : 32000.0,
                                            AVEncoderBitRateKey: 128000
         ]
 
