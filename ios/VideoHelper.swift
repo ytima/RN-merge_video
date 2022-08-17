@@ -63,7 +63,9 @@ enum VideoHelper {
 
         var scaleToFitRatio = videoSize.width / assetTrack.naturalSize.width
         if assetInfo.isPortrait {
+          if assetInfo.orientation == .right || assetInfo.orientation == .left {
             scaleToFitRatio = videoSize.width / assetTrack.naturalSize.height
+          }
             let scaleFactor = CGAffineTransform(
                 scaleX: scaleToFitRatio,
                 y: scaleToFitRatio)
@@ -77,7 +79,7 @@ enum VideoHelper {
                 y: scaleToFitRatio)
             var concat = assetTrack.preferredTransform.concatenating(scaleFactor)
                 .concatenating(CGAffineTransform(
-                  translationX: -((assetTrack.naturalSize.width * scaleToFitRatio / 2) - (UIScreen.main.bounds.width / 2)),
+                  translationX: -((assetTrack.naturalSize.width * scaleToFitRatio / 2) - (videoSize.width / 2)),
                     y: 0))
             if assetInfo.orientation == .down {
                 let fixUpsideDown = CGAffineTransform(rotationAngle: CGFloat(Double.pi))
