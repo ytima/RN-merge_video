@@ -21,6 +21,8 @@
 		962DC4E628A2758000974125 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962DC4E528A2758000974125 /* Media.xcassets */; };
 		96427D1628AA67FD00C95A77 /* VideoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96427D1528AA67FD00C95A77 /* VideoHelper.swift */; };
 		96427D1828AA944500C95A77 /* IMG_1033.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 96427D1728AA944500C95A77 /* IMG_1033.MOV */; };
+		96CC07C928ACD39A001CD5BD /* IMG_0142.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 96CC07C728ACD39A001CD5BD /* IMG_0142.MOV */; };
+		96CC07CA28ACD39A001CD5BD /* IMG_0092.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 96CC07C828ACD39A001CD5BD /* IMG_0092.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		962DC4E528A2758000974125 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		96427D1528AA67FD00C95A77 /* VideoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHelper.swift; sourceTree = "<group>"; };
 		96427D1728AA944500C95A77 /* IMG_1033.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_1033.MOV; path = ../../../../../../Downloads/IMG_1033.MOV; sourceTree = "<group>"; };
+		96CC07C728ACD39A001CD5BD /* IMG_0142.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_0142.MOV; path = ../../../../../../Downloads/IMG_0142.MOV; sourceTree = "<group>"; };
+		96CC07C828ACD39A001CD5BD /* IMG_0092.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = IMG_0092.MOV; path = ../../../../../../Downloads/IMG_0092.MOV; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,8 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				8B02477528A1734E009C74A0 /* audio.flac */,
 				96427D1728AA944500C95A77 /* IMG_1033.MOV */,
+				96CC07C828ACD39A001CD5BD /* IMG_0092.MOV */,
+				96CC07C728ACD39A001CD5BD /* IMG_0142.MOV */,
 				8B02477728A17356009C74A0 /* vid1.mov */,
 				8B02476E28A16E29009C74A0 /* RCTMergeVideo.m */,
 				962DC4E328A2725600974125 /* MergeVideo.swift */,
@@ -269,8 +275,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CC07C928ACD39A001CD5BD /* IMG_0142.MOV in Resources */,
 				962DC4E628A2758000974125 /* Media.xcassets in Resources */,
 				8B02477828A17356009C74A0 /* vid1.mov in Resources */,
+				96CC07CA28ACD39A001CD5BD /* IMG_0092.MOV in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				8B02477628A1734F009C74A0 /* audio.flac in Resources */,

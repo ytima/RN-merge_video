@@ -10,6 +10,8 @@ import AVKit
 import AVFoundation
 import MobileCoreServices
 
+let videoSize = CGSize(width: 720, height: 1280)
+
 @available(iOS 11.0, *)
 @objc (MergeVideo)
 public class MergeVideo: NSObject {
@@ -95,7 +97,7 @@ public class MergeVideo: NSObject {
                     of: secondAsset.tracks(withMediaType: .video)[0],
                     at: firstAsset?.duration ?? .zero)
                 let secondInstruction = AVMutableVideoCompositionLayerInstruction(assetTrack: secondTrack)
-                let scaleToFitRatio = UIScreen.main.bounds.width / secondTrack.naturalSize.width
+                let scaleToFitRatio = videoSize.width / secondTrack.naturalSize.width
                 let scaleFactor = CGAffineTransform(
                     scaleX: scaleToFitRatio,
                     y: scaleToFitRatio)
@@ -119,9 +121,7 @@ public class MergeVideo: NSObject {
         let mainComposition = AVMutableVideoComposition()
         mainComposition.instructions = [mainInstruction]
         mainComposition.frameDuration = CMTimeMake(value: 1, timescale: 25)
-        mainComposition.renderSize = CGSize(
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height)
+        mainComposition.renderSize = videoSize
 
         let audioTrack = mixComposition.addMutableTrack(
             withMediaType: .audio,
